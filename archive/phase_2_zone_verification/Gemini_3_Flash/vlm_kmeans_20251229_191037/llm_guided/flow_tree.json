@@ -1,0 +1,400 @@
+{
+  "title": "VLM-Guided Clustering Flow",
+  "algorithm": "kmeans",
+  "initial_clusters": [
+    {
+      "name": "Cluster_0",
+      "pts": 6215
+    },
+    {
+      "name": "Cluster_1",
+      "pts": 3785
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "cluster": "C0",
+      "pts": 6215,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C0.1",
+          "pts": 970
+        },
+        {
+          "name": "C0.2",
+          "pts": 2794
+        },
+        {
+          "name": "C0.3",
+          "pts": 2451
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 2,
+      "cluster": "C1",
+      "pts": 3785,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C1.1",
+          "pts": 1628
+        },
+        {
+          "name": "C1.2",
+          "pts": 1030
+        },
+        {
+          "name": "C1.3",
+          "pts": 1127
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 3,
+      "cluster": "C0.1",
+      "pts": 970,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 4,
+      "cluster": "C0.2",
+      "pts": 2794,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C0.2.1",
+          "pts": 1769
+        },
+        {
+          "name": "C0.2.2",
+          "pts": 1025
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 5,
+      "cluster": "C0.3",
+      "pts": 2451,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C0.3.1",
+          "pts": 1022
+        },
+        {
+          "name": "C0.3.2",
+          "pts": 771
+        },
+        {
+          "name": "C0.3.3",
+          "pts": 658
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 6,
+      "cluster": "C1.1",
+      "pts": 1628,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C1.1.1",
+          "pts": 785
+        },
+        {
+          "name": "C1.1.2",
+          "pts": 843
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 7,
+      "cluster": "C1.2",
+      "pts": 1030,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 8,
+      "cluster": "C1.3",
+      "pts": 1127,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 9,
+      "cluster": "C0.2.1",
+      "pts": 1769,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C0.2.1.1",
+          "pts": 1227
+        },
+        {
+          "name": "C0.2.1.2",
+          "pts": 542
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 10,
+      "cluster": "C0.2.2",
+      "pts": 1025,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 11,
+      "cluster": "C0.3.1",
+      "pts": 1022,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 12,
+      "cluster": "C0.3.2",
+      "pts": 771,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C0.3.2.1",
+          "pts": 504
+        },
+        {
+          "name": "C0.3.2.2",
+          "pts": 267
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 13,
+      "cluster": "C0.3.3",
+      "pts": 658,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 14,
+      "cluster": "C1.1.1",
+      "pts": 785,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 15,
+      "cluster": "C1.1.2",
+      "pts": 843,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C1.1.2.1",
+          "pts": 344
+        },
+        {
+          "name": "C1.1.2.2",
+          "pts": 387
+        },
+        {
+          "name": "C1.1.2.3",
+          "pts": 112
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 16,
+      "cluster": "C0.2.1.1",
+      "pts": 1227,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C0.2.1.1.1",
+          "pts": 996
+        },
+        {
+          "name": "C0.2.1.1.2",
+          "pts": 231
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 17,
+      "cluster": "C0.2.1.2",
+      "pts": 542,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 18,
+      "cluster": "C0.3.2.1",
+      "pts": 504,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 19,
+      "cluster": "C0.3.2.2",
+      "pts": 267,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 20,
+      "cluster": "C1.1.2.1",
+      "pts": 344,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C1.1.2.1.1",
+          "pts": 164
+        },
+        {
+          "name": "C1.1.2.1.2",
+          "pts": 180
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 21,
+      "cluster": "C1.1.2.2",
+      "pts": 387,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 22,
+      "cluster": "C1.1.2.3",
+      "pts": 112,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 23,
+      "cluster": "C0.2.1.1.1",
+      "pts": 996,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 24,
+      "cluster": "C0.2.1.1.2",
+      "pts": 231,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 25,
+      "cluster": "C1.1.2.1.1",
+      "pts": 164,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 26,
+      "cluster": "C1.1.2.1.2",
+      "pts": 180,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    }
+  ],
+  "final_clusters": [
+    {
+      "name": "C0.1",
+      "pts": 970
+    },
+    {
+      "name": "C1.2",
+      "pts": 1030
+    },
+    {
+      "name": "C1.3",
+      "pts": 1127
+    },
+    {
+      "name": "C0.2.2",
+      "pts": 1025
+    },
+    {
+      "name": "C0.3.1",
+      "pts": 1022
+    },
+    {
+      "name": "C0.3.3",
+      "pts": 658
+    },
+    {
+      "name": "C1.1.1",
+      "pts": 785
+    },
+    {
+      "name": "C0.2.1.2",
+      "pts": 542
+    },
+    {
+      "name": "C0.3.2.1",
+      "pts": 504
+    },
+    {
+      "name": "C0.3.2.2",
+      "pts": 267
+    },
+    {
+      "name": "C1.1.2.2",
+      "pts": 387
+    },
+    {
+      "name": "C1.1.2.3",
+      "pts": 112
+    },
+    {
+      "name": "C0.2.1.1.1",
+      "pts": 996
+    },
+    {
+      "name": "C0.2.1.1.2",
+      "pts": 231
+    },
+    {
+      "name": "C1.1.2.1.1",
+      "pts": 164
+    },
+    {
+      "name": "C1.1.2.1.2",
+      "pts": 180
+    }
+  ],
+  "metrics": {
+    "ARI": 0.5907,
+    "NMI": 0.6976
+  }
+}

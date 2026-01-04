@@ -1,0 +1,75 @@
+{
+  "title": "VLM-Guided Clustering Flow",
+  "algorithm": "kshape",
+  "initial_clusters": [
+    {
+      "name": "Cluster_0",
+      "pts": 5023
+    },
+    {
+      "name": "Cluster_1",
+      "pts": 4977
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "cluster": "C0",
+      "pts": 5023,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C0.1",
+          "pts": 2523
+        },
+        {
+          "name": "C0.2",
+          "pts": 2500
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 2,
+      "cluster": "C1",
+      "pts": 4977,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 3,
+      "cluster": "C0.1",
+      "pts": 2523,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 4,
+      "cluster": "C0.2",
+      "pts": 2500,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    }
+  ],
+  "final_clusters": [
+    {
+      "name": "C1",
+      "pts": 4977
+    },
+    {
+      "name": "C0.1",
+      "pts": 2523
+    },
+    {
+      "name": "C0.2",
+      "pts": 2500
+    }
+  ],
+  "metrics": {
+    "ARI": 0.7112,
+    "NMI": 0.8471
+  }
+}

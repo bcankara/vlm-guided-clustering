@@ -1,0 +1,96 @@
+{
+  "title": "VLM-Guided Clustering Flow",
+  "algorithm": "kshape",
+  "initial_clusters": [
+    {
+      "name": "Cluster_0",
+      "pts": 5023
+    },
+    {
+      "name": "Cluster_1",
+      "pts": 4977
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "cluster": "Cluster_0",
+      "pts": 5023,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "Cluster_2",
+          "pts": 2523
+        },
+        {
+          "name": "Cluster_3",
+          "pts": 2500
+        }
+      ],
+      "reasoning": "There is a clear structural difference based on the temporal evolution. About half the cluster follows a straight line (constant velocity), while the other half (generally those with lower average slo"
+    },
+    {
+      "step": 2,
+      "cluster": "Cluster_1",
+      "pts": 4977,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "Cluster_4",
+          "pts": 2477
+        },
+        {
+          "name": "Cluster_5",
+          "pts": 2500
+        }
+      ],
+      "reasoning": "The cluster is heterogeneous. While all plots show a downward trend (subsidence), they split clearly into two morphological types: those with very smooth, prominent seasonal waves (oscillatory) and th"
+    },
+    {
+      "step": 3,
+      "cluster": "Cluster_2",
+      "pts": 2523,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": "The cluster consists of a single homogeneous group characterized by a steady linear downward trend (subsidence). While the rate of subsidence varies across the samples (likely indicating a spatial gra"
+    },
+    {
+      "step": 5,
+      "cluster": "Cluster_4",
+      "pts": 2477,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": "All 16 time series belong to a single cluster characterized by rugged, quasi-linear subsidence. While the rate of sinking varies (gradient from Row 1 to Row 4), no samples exhibit stabilization (flatt"
+    },
+    {
+      "step": 6,
+      "cluster": "Cluster_5",
+      "pts": 2500,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": "The cluster is highly homogeneous. All 16 plots display the exact same morphological behavior: a consistent linear decline superimposed with strong, regular seasonal oscillations (waves). The waves ar"
+    }
+  ],
+  "final_clusters": [
+    {
+      "name": "Cluster_2",
+      "pts": 2523
+    },
+    {
+      "name": "Cluster_3",
+      "pts": 2500
+    },
+    {
+      "name": "Cluster_4",
+      "pts": 2477
+    },
+    {
+      "name": "Cluster_5",
+      "pts": 2500
+    }
+  ],
+  "metrics": {
+    "ARI": 0.9939,
+    "NMI": 0.9906
+  }
+}

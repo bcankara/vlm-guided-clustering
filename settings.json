@@ -1,0 +1,11 @@
+{
+  "gemini_api_key": "",
+  "gemini_model": "gemini-2.5-pro",
+  "k_range": [
+    2,
+    8
+  ],
+  "max_iterations": 100,
+  "min_cluster_size": 25,
+  "merge_viz_mode": "v2"
+}

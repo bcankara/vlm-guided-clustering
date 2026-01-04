@@ -1,0 +1,48 @@
+{
+  "step": 2,
+  "processed_cluster": "Cluster_1",
+  "processed_pts": 4977,
+  "decision": "SPLIT",
+  "gemini_response": {
+    "is_homogeneous": false,
+    "distinct_groups": 2,
+    "group_descriptions": [
+      "Time series with distinct, smooth, large-amplitude seasonal oscillations (waves) superimposed on the trend (e.g., [1,1], [1,2], [2,2], [3,3]).",
+      "Time series with a 'jagged' or noisy texture where seasonal patterns are obscured or absent, showing a rougher linear descent (e.g., [1,4], [2,1], [4,1])."
+    ],
+    "observation": "The cluster is heterogeneous. While all plots show a downward trend (subsidence), they split clearly into two morphological types: those with very smooth, prominent seasonal waves (oscillatory) and those with a rough, jagged, noisy trajectory. This suggests two different physical behaviors or signal qualities within the same cluster."
+  },
+  "frozen_clusters": {},
+  "queue_clusters": [
+    {
+      "name": "Cluster_2",
+      "pts": 2523
+    },
+    {
+      "name": "Cluster_3",
+      "pts": 2500
+    },
+    {
+      "name": "Cluster_4",
+      "pts": 2477
+    },
+    {
+      "name": "Cluster_5",
+      "pts": 2500
+    }
+  ],
+  "new_clusters": [
+    {
+      "name": "Cluster_4",
+      "pts": 2477
+    },
+    {
+      "name": "Cluster_5",
+      "pts": 2500
+    }
+  ],
+  "total_frozen_pts": 0,
+  "total_queue_pts": 10000,
+  "split_into": 2,
+  "parent_cluster": "Cluster_1"
+}

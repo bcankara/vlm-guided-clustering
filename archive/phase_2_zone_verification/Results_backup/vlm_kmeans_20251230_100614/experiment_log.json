@@ -1,0 +1,466 @@
+{
+  "experiment": "vlm_kmeans",
+  "algorithm": "kmeans",
+  "timestamp": "20251230_100614",
+  "metadata": {
+    "model": "gemini-3-pro-preview",
+    "mode": "IMAGE",
+    "final_k": 5,
+    "metrics": {
+      "ARI": 0.6767,
+      "NMI": 0.7297,
+      "V-Measure": 0.7297
+    },
+    "elapsed_seconds": 799.8152410984039,
+    "total_steps": 29
+  },
+  "steps": [
+    {
+      "step": 1,
+      "timestamp": "2025-12-30T10:06:52.907446",
+      "cluster": "C0",
+      "n_points": 6215,
+      "gemini_analysis": {
+        "is_homogeneous": false,
+        "distinct_groups": 2,
+        "reasoning": ""
+      },
+      "action": "SPLIT",
+      "output": {
+        "C0.1": 2991,
+        "C0.2": 3224
+      }
+    },
+    {
+      "step": 2,
+      "timestamp": "2025-12-30T10:07:21.940518",
+      "cluster": "C1",
+      "n_points": 3785,
+      "gemini_analysis": {
+        "is_homogeneous": false,
+        "distinct_groups": 3,
+        "reasoning": ""
+      },
+      "action": "SPLIT",
+      "output": {
+        "C1.1": 1628,
+        "C1.2": 1030,
+        "C1.3": 1127
+      }
+    },
+    {
+      "step": 3,
+      "timestamp": "2025-12-30T10:07:49.076083",
+      "cluster": "C0.1",
+      "n_points": 2991,
+      "gemini_analysis": {
+        "is_homogeneous": false,
+        "distinct_groups": 2,
+        "reasoning": ""
+      },
+      "action": "SPLIT",
+      "output": {
+        "C0.1.1": 1111,
+        "C0.1.2": 1880
+      }
+    },
+    {
+      "step": 4,
+      "timestamp": "2025-12-30T10:08:23.121571",
+      "cluster": "C0.2",
+      "n_points": 3224,
+      "gemini_analysis": {
+        "is_homogeneous": false,
+        "distinct_groups": 2,
+        "reasoning": ""
+      },
+      "action": "SPLIT",
+      "output": {
+        "C0.2.1": 2296,
+        "C0.2.2": 928
+      }
+    },
+    {
+      "step": 5,
+      "timestamp": "2025-12-30T10:08:49.419927",
+      "cluster": "C1.1",
+      "n_points": 1628,
+      "gemini_analysis": {
+        "is_homogeneous": false,
+        "distinct_groups": 2,
+        "reasoning": ""
+      },
+      "action": "SPLIT",
+      "output": {
+        "C1.1.1": 785,
+        "C1.1.2": 843
+      }
+    },
+    {
+      "step": 6,
+      "timestamp": "2025-12-30T10:09:09.203857",
+      "cluster": "C1.2",
+      "n_points": 1030,
+      "gemini_analysis": {
+        "is_homogeneous": true,
+        "distinct_groups": 1,
+        "reasoning": ""
+      },
+      "action": "FREEZE",
+      "output": "FROZEN"
+    },
+    {
+      "step": 7,
+      "timestamp": "2025-12-30T10:09:36.424786",
+      "cluster": "C1.3",
+      "n_points": 1127,
+      "gemini_analysis": {
+        "is_homogeneous": true,
+        "distinct_groups": 1,
+        "reasoning": ""
+      },
+      "action": "FREEZE",
+      "output": "FROZEN"
+    },
+    {
+      "step": 8,
+      "timestamp": "2025-12-30T10:09:59.031838",
+      "cluster": "C0.1.1",
+      "n_points": 1111,
+      "gemini_analysis": {
+        "is_homogeneous": true,
+        "distinct_groups": 1,
+        "reasoning": ""
+      },
+      "action": "FREEZE",
+      "output": "FROZEN"
+    },
+    {
+      "step": 9,
+      "timestamp": "2025-12-30T10:10:41.698659",
+      "cluster": "C0.1.2",
+      "n_points": 1880,
+      "gemini_analysis": {
+        "is_homogeneous": false,
+        "distinct_groups": 2,
+        "reasoning": ""
+      },
+      "action": "SPLIT",
+      "output": {
+        "C0.1.2.1": 1256,
+        "C0.1.2.2": 624
+      }
+    },
+    {
+      "step": 10,
+      "timestamp": "2025-12-30T10:11:08.272578",
+      "cluster": "C0.2.1",
+      "n_points": 2296,
+      "gemini_analysis": {
+        "is_homogeneous": false,
+        "distinct_groups": 2,
+        "reasoning": ""
+      },
+      "action": "SPLIT",
+      "output": {
+        "C0.2.1.1": 1311,
+        "C0.2.1.2": 985
+      }
+    },
+    {
+      "step": 11,
+      "timestamp": "2025-12-30T10:11:31.278999",
+      "cluster": "C0.2.2",
+      "n_points": 928,
+      "gemini_analysis": {
+        "is_homogeneous": true,
+        "distinct_groups": 1,
+        "reasoning": ""
+      },
+      "action": "FREEZE",
+      "output": "FROZEN"
+    },
+    {
+      "step": 12,
+      "timestamp": "2025-12-30T10:11:52.679292",
+      "cluster": "C1.1.1",
+      "n_points": 785,
+      "gemini_analysis": {
+        "is_homogeneous": true,
+        "distinct_groups": 1,
+        "reasoning": ""
+      },
+      "action": "FREEZE",
+      "output": "FROZEN"
+    },
+    {
+      "step": 13,
+      "timestamp": "2025-12-30T10:12:17.025390",
+      "cluster": "C1.1.2",
+      "n_points": 843,
+      "gemini_analysis": {
+        "is_homogeneous": false,
+        "distinct_groups": 2,
+        "reasoning": ""
+      },
+      "action": "SPLIT",
+      "output": {
+        "C1.1.2.1": 385,
+        "C1.1.2.2": 458
+      }
+    },
+    {
+      "step": 14,
+      "timestamp": "2025-12-30T10:12:48.097129",
+      "cluster": "C0.1.2.1",
+      "n_points": 1256,
+      "gemini_analysis": {
+        "is_homogeneous": true,
+        "distinct_groups": 1,
+        "reasoning": ""
+      },
+      "action": "FREEZE",
+      "output": "FROZEN"
+    },
+    {
+      "step": 15,
+      "timestamp": "2025-12-30T10:13:13.375665",
+      "cluster": "C0.1.2.2",
+      "n_points": 624,
+      "gemini_analysis": {
+        "is_homogeneous": true,
+        "distinct_groups": 1,
+        "reasoning": ""
+      },
+      "action": "FREEZE",
+      "output": "FROZEN"
+    },
+    {
+      "step": 16,
+      "timestamp": "2025-12-30T10:14:05.352863",
+      "cluster": "C0.2.1.1",
+      "n_points": 1311,
+      "gemini_analysis": {
+        "is_homogeneous": false,
+        "distinct_groups": 3,
+        "reasoning": ""
+      },
+      "action": "SPLIT",
+      "output": {
+        "C0.2.1.1.1": 345,
+        "C0.2.1.1.2": 647,
+        "C0.2.1.1.3": 319
+      }
+    },
+    {
+      "step": 17,
+      "timestamp": "2025-12-30T10:14:29.061845",
+      "cluster": "C0.2.1.2",
+      "n_points": 985,
+      "gemini_analysis": {
+        "is_homogeneous": false,
+        "distinct_groups": 2,
+        "reasoning": ""
+      },
+      "action": "SPLIT",
+      "output": {
+        "C0.2.1.2.1": 279,
+        "C0.2.1.2.2": 706
+      }
+    },
+    {
+      "step": 18,
+      "timestamp": "2025-12-30T10:15:34.840531",
+      "cluster": "C1.1.2.1",
+      "n_points": 385,
+      "gemini_analysis": {
+        "is_homogeneous": false,
+        "distinct_groups": 2,
+        "reasoning": ""
+      },
+      "action": "SPLIT",
+      "output": {
+        "C1.1.2.1.1": 188,
+        "C1.1.2.1.2": 197
+      }
+    },
+    {
+      "step": 19,
+      "timestamp": "2025-12-30T10:16:06.295190",
+      "cluster": "C1.1.2.2",
+      "n_points": 458,
+      "gemini_analysis": {
+        "is_homogeneous": false,
+        "distinct_groups": 2,
+        "reasoning": ""
+      },
+      "action": "SPLIT",
+      "output": {
+        "C1.1.2.2.1": 112,
+        "C1.1.2.2.2": 346
+      }
+    },
+    {
+      "step": 20,
+      "timestamp": "2025-12-30T10:16:26.160345",
+      "cluster": "C0.2.1.1.1",
+      "n_points": 345,
+      "gemini_analysis": {
+        "is_homogeneous": true,
+        "distinct_groups": 1,
+        "reasoning": ""
+      },
+      "action": "FREEZE",
+      "output": "FROZEN"
+    },
+    {
+      "step": 21,
+      "timestamp": "2025-12-30T10:16:44.472539",
+      "cluster": "C0.2.1.1.2",
+      "n_points": 647,
+      "gemini_analysis": {
+        "is_homogeneous": true,
+        "distinct_groups": 1,
+        "reasoning": ""
+      },
+      "action": "FREEZE",
+      "output": "FROZEN"
+    },
+    {
+      "step": 22,
+      "timestamp": "2025-12-30T10:17:20.043508",
+      "cluster": "C0.2.1.1.3",
+      "n_points": 319,
+      "gemini_analysis": {
+        "is_homogeneous": true,
+        "distinct_groups": 1,
+        "reasoning": ""
+      },
+      "action": "FREEZE",
+      "output": "FROZEN"
+    },
+    {
+      "step": 23,
+      "timestamp": "2025-12-30T10:17:49.893243",
+      "cluster": "C0.2.1.2.1",
+      "n_points": 279,
+      "gemini_analysis": {
+        "is_homogeneous": true,
+        "distinct_groups": 1,
+        "reasoning": ""
+      },
+      "action": "FREEZE",
+      "output": "FROZEN"
+    },
+    {
+      "step": 24,
+      "timestamp": "2025-12-30T10:18:11.699610",
+      "cluster": "C0.2.1.2.2",
+      "n_points": 706,
+      "gemini_analysis": {
+        "is_homogeneous": true,
+        "distinct_groups": 1,
+        "reasoning": ""
+      },
+      "action": "FREEZE",
+      "output": "FROZEN"
+    },
+    {
+      "step": 25,
+      "timestamp": "2025-12-30T10:18:40.015341",
+      "cluster": "C1.1.2.1.1",
+      "n_points": 188,
+      "gemini_analysis": {
+        "is_homogeneous": true,
+        "distinct_groups": 1,
+        "reasoning": ""
+      },
+      "action": "FREEZE",
+      "output": "FROZEN"
+    },
+    {
+      "step": 26,
+      "timestamp": "2025-12-30T10:18:59.570506",
+      "cluster": "C1.1.2.1.2",
+      "n_points": 197,
+      "gemini_analysis": {
+        "is_homogeneous": true,
+        "distinct_groups": 1,
+        "reasoning": ""
+      },
+      "action": "FREEZE",
+      "output": "FROZEN"
+    },
+    {
+      "step": 27,
+      "timestamp": "2025-12-30T10:19:19.045083",
+      "cluster": "C1.1.2.2.1",
+      "n_points": 112,
+      "gemini_analysis": {
+        "is_homogeneous": true,
+        "distinct_groups": 1,
+        "reasoning": ""
+      },
+      "action": "FREEZE",
+      "output": "FROZEN"
+    },
+    {
+      "step": 28,
+      "timestamp": "2025-12-30T10:19:34.622601",
+      "cluster": "C1.1.2.2.2",
+      "n_points": 346,
+      "gemini_analysis": {
+        "is_homogeneous": true,
+        "distinct_groups": 1,
+        "reasoning": ""
+      },
+      "action": "FREEZE",
+      "output": "FROZEN"
+    },
+    {
+      "phase": "MERGE",
+      "timestamp": "2025-12-30T10:33:44.936552",
+      "pre_merge_clusters": 16,
+      "post_merge_clusters": 5,
+      "merge_groups": {
+        "0": [
+          "C0.1.2.2",
+          "C0.2.1.1.1",
+          "C1.1.1",
+          "C0.2.1.2.2"
+        ],
+        "1": [
+          "C0.2.1.1.2",
+          "C0.1.2.1"
+        ],
+        "2": [
+          "C0.2.1.1.3",
+          "C0.2.1.2.1",
+          "C1.1.2.1.1",
+          "C1.2",
+          "C1.1.2.2.2"
+        ],
+        "3": [
+          "C1.1.2.1.2"
+        ],
+        "4": [
+          "C1.3",
+          "C1.1.2.2.1",
+          "C0.2.2",
+          "C0.1.1"
+        ]
+      },
+      "pre_metrics": {
+        "ARI": 0.3649,
+        "NMI": 0.6199,
+        "V-Measure": 0.6199
+      },
+      "post_metrics": {
+        "ARI": 0.6767,
+        "NMI": 0.7297,
+        "V-Measure": 0.7297
+      },
+      "reasoning": ""
+    }
+  ]
+}

@@ -1,0 +1,426 @@
+{
+  "title": "VLM-Guided Clustering Flow",
+  "algorithm": "kmeans",
+  "initial_clusters": [
+    {
+      "name": "Cluster_0",
+      "pts": 6215
+    },
+    {
+      "name": "Cluster_1",
+      "pts": 3785
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "cluster": "C0",
+      "pts": 6215,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C0.1",
+          "pts": 970
+        },
+        {
+          "name": "C0.2",
+          "pts": 2794
+        },
+        {
+          "name": "C0.3",
+          "pts": 2451
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 2,
+      "cluster": "C1",
+      "pts": 3785,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C1.1",
+          "pts": 1628
+        },
+        {
+          "name": "C1.2",
+          "pts": 1030
+        },
+        {
+          "name": "C1.3",
+          "pts": 1127
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 3,
+      "cluster": "C0.1",
+      "pts": 970,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 4,
+      "cluster": "C0.2",
+      "pts": 2794,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C0.2.1",
+          "pts": 1769
+        },
+        {
+          "name": "C0.2.2",
+          "pts": 1025
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 5,
+      "cluster": "C0.3",
+      "pts": 2451,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C0.3.1",
+          "pts": 1439
+        },
+        {
+          "name": "C0.3.2",
+          "pts": 1012
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 6,
+      "cluster": "C1.1",
+      "pts": 1628,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C1.1.1",
+          "pts": 785
+        },
+        {
+          "name": "C1.1.2",
+          "pts": 843
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 7,
+      "cluster": "C1.2",
+      "pts": 1030,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 8,
+      "cluster": "C1.3",
+      "pts": 1127,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 9,
+      "cluster": "C0.2.1",
+      "pts": 1769,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C0.2.1.1",
+          "pts": 1227
+        },
+        {
+          "name": "C0.2.1.2",
+          "pts": 542
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 10,
+      "cluster": "C0.2.2",
+      "pts": 1025,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 11,
+      "cluster": "C0.3.1",
+      "pts": 1439,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C0.3.1.1",
+          "pts": 470
+        },
+        {
+          "name": "C0.3.1.2",
+          "pts": 969
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 12,
+      "cluster": "C0.3.2",
+      "pts": 1012,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C0.3.2.1",
+          "pts": 692
+        },
+        {
+          "name": "C0.3.2.2",
+          "pts": 320
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 13,
+      "cluster": "C1.1.1",
+      "pts": 785,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 14,
+      "cluster": "C1.1.2",
+      "pts": 843,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C1.1.2.1",
+          "pts": 385
+        },
+        {
+          "name": "C1.1.2.2",
+          "pts": 458
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 15,
+      "cluster": "C0.2.1.1",
+      "pts": 1227,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 16,
+      "cluster": "C0.2.1.2",
+      "pts": 542,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 17,
+      "cluster": "C0.3.1.1",
+      "pts": 470,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 18,
+      "cluster": "C0.3.1.2",
+      "pts": 969,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C0.3.1.2.1",
+          "pts": 659
+        },
+        {
+          "name": "C0.3.1.2.2",
+          "pts": 310
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 19,
+      "cluster": "C0.3.2.1",
+      "pts": 692,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 20,
+      "cluster": "C0.3.2.2",
+      "pts": 320,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 21,
+      "cluster": "C1.1.2.1",
+      "pts": 385,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C1.1.2.1.1",
+          "pts": 188
+        },
+        {
+          "name": "C1.1.2.1.2",
+          "pts": 197
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 22,
+      "cluster": "C1.1.2.2",
+      "pts": 458,
+      "decision": "SPLIT",
+      "children": [
+        {
+          "name": "C1.1.2.2.1",
+          "pts": 112
+        },
+        {
+          "name": "C1.1.2.2.2",
+          "pts": 346
+        }
+      ],
+      "reasoning": ""
+    },
+    {
+      "step": 23,
+      "cluster": "C0.3.1.2.1",
+      "pts": 659,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 24,
+      "cluster": "C0.3.1.2.2",
+      "pts": 310,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 25,
+      "cluster": "C1.1.2.1.1",
+      "pts": 188,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 26,
+      "cluster": "C1.1.2.1.2",
+      "pts": 197,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 27,
+      "cluster": "C1.1.2.2.1",
+      "pts": 112,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    },
+    {
+      "step": 28,
+      "cluster": "C1.1.2.2.2",
+      "pts": 346,
+      "decision": "FREEZE",
+      "children": [],
+      "reasoning": ""
+    }
+  ],
+  "final_clusters": [
+    {
+      "name": "C0.1",
+      "pts": 970
+    },
+    {
+      "name": "C1.2",
+      "pts": 1030
+    },
+    {
+      "name": "C1.3",
+      "pts": 1127
+    },
+    {
+      "name": "C0.2.2",
+      "pts": 1025
+    },
+    {
+      "name": "C1.1.1",
+      "pts": 785
+    },
+    {
+      "name": "C0.2.1.1",
+      "pts": 1227
+    },
+    {
+      "name": "C0.2.1.2",
+      "pts": 542
+    },
+    {
+      "name": "C0.3.1.1",
+      "pts": 470
+    },
+    {
+      "name": "C0.3.2.1",
+      "pts": 692
+    },
+    {
+      "name": "C0.3.2.2",
+      "pts": 320
+    },
+    {
+      "name": "C0.3.1.2.1",
+      "pts": 659
+    },
+    {
+      "name": "C0.3.1.2.2",
+      "pts": 310
+    },
+    {
+      "name": "C1.1.2.1.1",
+      "pts": 188
+    },
+    {
+      "name": "C1.1.2.1.2",
+      "pts": 197
+    },
+    {
+      "name": "C1.1.2.2.1",
+      "pts": 112
+    },
+    {
+      "name": "C1.1.2.2.2",
+      "pts": 346
+    }
+  ],
+  "metrics": {
+    "ARI": 0.3695,
+    "NMI": 0.6291
+  }
+}

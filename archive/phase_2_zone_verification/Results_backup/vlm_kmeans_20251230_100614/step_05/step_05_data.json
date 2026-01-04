@@ -1,0 +1,61 @@
+{
+  "step": 5,
+  "processed_cluster": "C1.1",
+  "processed_pts": 1628,
+  "decision": "SPLIT",
+  "gemini_response": {
+    "is_homogeneous": false,
+    "distinct_groups": 2,
+    "group_descriptions": [],
+    "observation": ""
+  },
+  "frozen_clusters": {},
+  "queue_clusters": [
+    {
+      "name": "C1.2",
+      "pts": 1030
+    },
+    {
+      "name": "C1.3",
+      "pts": 1127
+    },
+    {
+      "name": "C0.1.1",
+      "pts": 1111
+    },
+    {
+      "name": "C0.1.2",
+      "pts": 1880
+    },
+    {
+      "name": "C0.2.1",
+      "pts": 2296
+    },
+    {
+      "name": "C0.2.2",
+      "pts": 928
+    },
+    {
+      "name": "C1.1.1",
+      "pts": 785
+    },
+    {
+      "name": "C1.1.2",
+      "pts": 843
+    }
+  ],
+  "new_clusters": [
+    {
+      "name": "C1.1.1",
+      "pts": 785
+    },
+    {
+      "name": "C1.1.2",
+      "pts": 843
+    }
+  ],
+  "total_frozen_pts": 0,
+  "total_queue_pts": 10000,
+  "split_into": 2,
+  "parent_cluster": "C1.1"
+}
