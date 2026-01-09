@@ -316,13 +316,55 @@ vlm-guided-clustering/
 │   ├── tracker.py              # Experiment tracking
 │   └── scientific_logger.py    # Scientific logging
 │
-└── 📁 docs/
-    ├── logo.png                # Project logo
-    ├── vlm_clustering_diagram.png
-    ├── split_phase.png
-    ├── merge_phase.png
-    └── ground_truth.png
+├── 📁 docs/
+│   ├── logo.png                # Project logo
+│   ├── vlm_clustering_diagram.png
+│   ├── split_phase.png
+│   ├── merge_phase.png
+│   └── ground_truth.png
+│
+└── 📁 archive/                 # Downloadable data archives
+    ├── 📦 archive.zip          # Archived experiments (2.7 GB)
+    ├── 📦 archive.z01          # Split archive part 1
+    ├── 📦 archive.z02          # Split archive part 2
+    └── 📦 results_final.zip    # Final results (1.8 GB)
 ```
+
+---
+
+## 📦 Downloadable Data
+
+Due to large file sizes, experiment results are provided as compressed archives:
+
+| File | Size | Contents |
+|------|------|----------|
+| **[archive.zip](archive/archive.zip)** | ~2.7 GB | Archived experiments, intermediate results, failed experiments, phase-by-phase development history |
+| **[results_final.zip](archive/results_final.zip)** | ~1.8 GB | Final experiment results for Gemini 2.5 Pro, Gemini 3 Flash, and Gemini 3 Pro models |
+
+> ⚠️ **Note**: `archive.zip` is split into multiple parts (`archive.z01`, `archive.z02`, `archive.zip`). Download all parts to the same folder and extract `archive.zip` to reassemble.
+
+### Archive Contents
+
+```
+archive/
+├── failed_experiments/     # Over-merge cases and debugging data
+├── intermediate_results/   # K-value experiments (K=2 to K=30)
+├── phase_0_baby_steps/     # Initial development and ground truth data
+├── phase_1_working/        # Working prototypes
+├── phase_2_zone_verification/  # Zone-based verification tests
+└── README.md               # Detailed archive documentation
+```
+
+### Results Final Contents
+
+```
+results_final/
+├── Gemini_2-5_Pro/        # Best performing model results
+├── Gemini_3_Flash/        # Flash model experiments
+└── Gemini_3_Pro/          # Pro model experiments
+```
+
+> 💡 **Tip**: Download and extract to explore detailed experiment logs, visualizations, and JSON reports.
 
 ---
 
