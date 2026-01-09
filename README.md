@@ -25,6 +25,7 @@
 ## 📋 Table of Contents
 
 - [Overview](#-overview)
+- [Downloadable Data](#-downloadable-data)
 - [Features](#-features)
 - [How It Works](#-how-it-works)
 - [Quick Start](#-quick-start)
@@ -45,6 +46,52 @@ This project introduces a novel approach to time series clustering by leveraging
 2. **Which clusters should be merged?** (Do they represent the same behavior?)
 
 This approach achieves **near-manual accuracy** (ARI > 0.95) on synthetic InSAR deformation data with 4 ground truth clusters.
+
+---
+
+## 📦 Downloadable Data
+
+Experiment results and archived data are available in the **[`archive/`](archive/)** folder.
+
+Navigate to this folder and download the following files:
+
+| File | Size | Description |
+|------|------|-------------|
+| `archive.z01` | ~2 GB | Split archive - Part 1 |
+| `archive.z02` | ~700 MB | Split archive - Part 2 |
+| `archive.zip` | ~50 MB | Split archive - Main file |
+| `results_final.zip` | ~1.8 GB | Final experiment results |
+
+### ⚠️ Important: Split Archive Instructions
+
+The `archive.zip` is split into multiple parts due to file size limits:
+
+1. **Download ALL parts** (`archive.z01`, `archive.z02`, `archive.zip`) to the **same folder**
+2. **Extract `archive.zip`** - it will automatically combine all parts
+3. You need **all parts** to extract successfully
+
+### Archive Contents
+
+```
+archive.zip (when extracted)
+├── failed_experiments/        # Over-merge cases and debugging data
+├── intermediate_results/      # K-value experiments (K=2 to K=30)
+├── phase_0_baby_steps/        # Initial development and ground truth data
+├── phase_1_working/           # Working prototypes
+├── phase_2_zone_verification/ # Zone-based verification tests
+└── README.md                  # Detailed archive documentation
+```
+
+### Results Final Contents
+
+```
+results_final.zip (when extracted)
+├── Gemini_2-5_Pro/    # Best performing model results
+├── Gemini_3_Flash/    # Flash model experiments
+└── Gemini_3_Pro/      # Pro model experiments
+```
+
+> 💡 **Tip**: These archives contain detailed experiment logs, visualizations, and JSON reports.
 
 ---
 
@@ -329,42 +376,6 @@ vlm-guided-clustering/
     ├── 📦 archive.z02          # Split archive part 2
     └── 📦 results_final.zip    # Final results (1.8 GB)
 ```
-
----
-
-## 📦 Downloadable Data
-
-Due to large file sizes, experiment results are provided as compressed archives:
-
-| File | Size | Contents |
-|------|------|----------|
-| **[archive.zip](archive/archive.zip)** | ~2.7 GB | Archived experiments, intermediate results, failed experiments, phase-by-phase development history |
-| **[results_final.zip](archive/results_final.zip)** | ~1.8 GB | Final experiment results for Gemini 2.5 Pro, Gemini 3 Flash, and Gemini 3 Pro models |
-
-> ⚠️ **Note**: `archive.zip` is split into multiple parts (`archive.z01`, `archive.z02`, `archive.zip`). Download all parts to the same folder and extract `archive.zip` to reassemble.
-
-### Archive Contents
-
-```
-archive/
-├── failed_experiments/     # Over-merge cases and debugging data
-├── intermediate_results/   # K-value experiments (K=2 to K=30)
-├── phase_0_baby_steps/     # Initial development and ground truth data
-├── phase_1_working/        # Working prototypes
-├── phase_2_zone_verification/  # Zone-based verification tests
-└── README.md               # Detailed archive documentation
-```
-
-### Results Final Contents
-
-```
-results_final/
-├── Gemini_2-5_Pro/        # Best performing model results
-├── Gemini_3_Flash/        # Flash model experiments
-└── Gemini_3_Pro/          # Pro model experiments
-```
-
-> 💡 **Tip**: Download and extract to explore detailed experiment logs, visualizations, and JSON reports.
 
 ---
 
