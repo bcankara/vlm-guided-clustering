@@ -351,6 +351,114 @@ def create_cluster_image(timeseries: np.ndarray, name: str, save_dir: Path) -> T
 
 
 
+def analyze_with_gemini_text_only(sample_data, sample_slopes, n_points: int, cluster_name: str) -> Dict:
+    """Text-only counterpart of analyze_with_gemini. The same 16 representative series
+    are sent to the VLM as NUMERIC TEXT instead of a rendered plot, with an identical
+    decision schema and self-correction. The only difference from the image path is the
+    input modality, which makes this an ablation of the visual modality."""
+    from google import genai
+    from google.genai import types
+    api_key = get_api_key()
+    if not api_key:
+        return {"is_homogeneous": True, "error": "No API key"}
+    client = genai.Client(api_key=api_key)
+
+    lines = []
+    for i, (series, slope) in enumerate(zip(sample_data, sample_slopes)):
+        vals = ", ".join(str(int(round(float(v)))) for v in series)
+        lines.append(f"Series {i+1} (slope {slope:.3f}): [{vals}]")
+    series_text = "\n".join(lines)
+
+    prompt = f"""You are a GEOSCIENTIST and InSAR TIME SERIES DEFORMATION SIGNAL PROCESSING EXPERT.
+
+DATA: 16 deformation time series (cumulative displacement in mm, one value per epoch) from {cluster_name} ({n_points} points). Each series is given below with its slope (positive = upward trend, negative = downward trend).
+
+{series_text}
+
+QUESTION: Do these series come from the SAME physical region (identical movement) or DIFFERENT regions?
+
+LOOK CLOSELY AT THE SHAPE:
+- Even if they trend in the same direction, are the shapes IDENTICAL?
+- Does one have waves/seasonality while another is straight?
+- Does one drop steeply while another is more flat?
+- Do the peaks and valleys align reasonably well?
+
+SAME REGION = Series show consistent deformation behavior with matching shape and trend.
+DIFFERENT REGIONS = Series show different behaviors (e.g., opposite trends, different curve shapes, or MAJOR shifting peaks).
+
+CRITICAL CHECK:
+1. If trends are OPPOSITE (Up vs Down) -> SPLIT immediately.
+2. If shapes are DIFFERENT (Wave vs Straight) -> SPLIT.
+3. If peaks/valleys do NOT align in time (ALLOW SMALL SHIFTS) -> SPLIT only if shifts are large.
+4. Only if indistinguishable -> HOMOGENEOUS.
+
+Return JSON with confidence score (0-100):
+```json
+{{
+    "is_homogeneous": true/false,
+    "should_split": true/false,
+    "distinct_groups": <number>,
+    "confidence": <0-100>
+}}
+```"""
+    try:
+        response = client.models.generate_content(
+            model=GEMINI_MODEL,
+            contents=[types.Content(role="user", parts=[types.Part.from_text(text=prompt)])],
+            config=types.GenerateContentConfig(temperature=0)
+        )
+        text = response.text or ""
+        if "```json" in text:
+            start = text.find("```json") + 7; end = text.find("```", start)
+            result = json.loads(text[start:end].strip())
+        elif "{" in text:
+            result = json.loads(text[text.find("{"):text.rfind("}") + 1])
+        else:
+            return {"is_homogeneous": True, "raw": text}
+
+        confidence = result.get("confidence", 100)
+        should_split = result.get("should_split", False)
+        if should_split and confidence < 80:
+            verify_prompt = f"""You previously decided to SPLIT this cluster with only {confidence}% confidence.
+
+Look at the 16 series again. Are you ABSOLUTELY CERTAIN these are from different regions?
+
+Remember:
+- Minor noise differences are NORMAL
+- Small phase shifts are ACCEPTABLE
+- Only split if there is UNDENIABLE proof (opposite trends, completely different shapes)
+
+If you are not 100% sure, change your decision to HOMOGENEOUS.
+
+DATA (same 16 series):
+{series_text}
+
+Return JSON:
+```json
+{{
+    "is_homogeneous": true/false,
+    "should_split": true/false,
+    "distinct_groups": <number>,
+    "confidence": <0-100>,
+    "verified": true
+}}
+```"""
+            verify_response = client.models.generate_content(
+                model=GEMINI_MODEL,
+                contents=[types.Content(role="user", parts=[types.Part.from_text(text=verify_prompt)])],
+                config=types.GenerateContentConfig(temperature=0)
+            )
+            vt = verify_response.text or ""
+            if "```json" in vt:
+                s = vt.find("```json") + 7; e = vt.find("```", s); result = json.loads(vt[s:e].strip())
+            elif "{" in vt:
+                result = json.loads(vt[vt.find("{"):vt.rfind("}") + 1])
+            result["self_corrected"] = True
+        return result
+    except Exception as e:
+        return {"is_homogeneous": True, "error": str(e)}
+
+
 def analyze_with_gemini(image_path: str, n_points: int, cluster_name: str, sample_data: np.ndarray = None, sample_slopes: np.ndarray = None, full_cluster_ts: np.ndarray = None) -> Dict:
     """Ask Gemini if cluster is homogeneous - with IMAGE + DYNAMIC STATISTICS"""
     from google import genai
@@ -2020,17 +2128,16 @@ def run_llm_guided(df, ts_cols, ground_truth, algorithm, logger, text_only=False
         tree_file = tracker.get_experiment_dir() / "cluster_hierarchy.txt"
         print(f"  🌳 Tree: {tree_file}")
         
-        # Use merged results if better
-        if post_merge_metrics['ARI'] >= pre_merge_metrics['ARI']:
-            print(f"\n  ✅ Merge improved results - using merged clusters")
-            final_labels = post_merge_labels
-            metrics = post_merge_metrics
-            final_k = len(merge_groups)
-        else:
-            print(f"\n  ❌ Merge worsened results - keeping original clusters")
-            final_labels = pre_merge_labels
-            metrics = pre_merge_metrics
-            final_k = n_clusters
+        # The VLM is the judge: its merge decision is applied AS-IS (fully autonomous).
+        # Ground truth is used ONLY to MEASURE the final result (metrics) below — never
+        # to decide which clustering to keep. The earlier "use merged only if GT-ARI
+        # improves" gate was removed: it is label leakage (unavailable in real
+        # deployment), and no unsupervised proxy (e.g. silhouette) can replace it,
+        # because silhouette favours over-segmentation — deciding the correct cluster
+        # count is precisely the judgement we delegate to the VLM.
+        final_labels = post_merge_labels
+        metrics = post_merge_metrics
+        final_k = len(merge_groups)
     else:
         print(f"\n  ✅ No merge groups returned - keeping original clusters")
         final_labels = pre_merge_labels
